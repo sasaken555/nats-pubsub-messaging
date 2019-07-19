@@ -7,6 +7,7 @@ const nc = NATS.connect(url);
 
 nc.on("connect", client => {
     logger.info("client connected!");
+    logger.debug("Max payload size:", nc.info.max_payload);
     nc.close();
 });
 
