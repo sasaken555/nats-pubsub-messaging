@@ -5,21 +5,21 @@ const NATS = require("nats");
 const nc = NATS.connect("nats://localhost:4222");
 
 nc.on("connect", c => {
-    logger.info("connected!");
+  logger.info("connected!");
 });
 
 nc.on("disconnect", () => {
-    logger.info("disconnected...");
-    nc.close();
+  logger.info("disconnected...");
+  nc.close();
 });
 
 nc.on("error", err => {
-    logger.error(err.message);
-    nc.close();
+  logger.error(err.message);
+  nc.close();
 });
 
 // subscribe "updates" subject for 10 messages.
 const options = { max: 10 };
 nc.subscribe("updates", options, msg => {
-    logger.debug(`msg=${msg}`);
+  logger.debug(`msg=${msg}`);
 });
