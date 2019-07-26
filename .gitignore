@@ -6,7 +6,8 @@
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon
+
 
 # Thumbnails
 ._*
@@ -148,3 +149,6 @@ fabric.properties
 
 
 .idea/
+
+# GCP
+gcloud_credential.json
