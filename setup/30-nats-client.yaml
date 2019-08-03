@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nats-client
+  labels:
+    app: nats-client
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nats-client
+  template:
+    metadata:
+      labels:
+        app: nats-client
+    spec:
+      containers:
+        - name: client
+          image: sasaken555/nats-pubsub-sample:1.0.3

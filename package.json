@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node src/nats/structuredData.js",
     "lint": "eslint src/**/*.js"
   },
   "keywords": [],
