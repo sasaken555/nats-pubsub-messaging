@@ -1,0 +1,13 @@
+version: '3'
+services:
+  nats:
+    image: nats:latest
+    ports:
+      - '4222:4222'
+      - '6222:6222'
+      - '8222:8222'
+  prom-exporter:
+    image: synadia/prometheus-nats-exporter:0.5.0
+    command: -varz "http://localhost:8222"
+    ports:
+      - '7777:7777'
