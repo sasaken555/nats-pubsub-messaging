@@ -8,4 +8,7 @@ spec:
   natsConfig:
     debug: true
     trace: true
-
+  pod:
+    enableMetrics: true
+    metricsImage: "synadia/prometheus-nats-exporter"
+    metricsImageTag: "0.5.0"
