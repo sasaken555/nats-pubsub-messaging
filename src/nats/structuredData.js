@@ -3,8 +3,8 @@ const logger = getLogger("structured-data");
 
 const NATS = require("nats");
 const nc = NATS.connect({
-  // url: "nats://localhost:4222",
-  url: "nats://ponz-nats-cluster.default.svc.cluster.local:4222",
+  url: "nats://localhost:4222",
+  // url: "nats://ponz-nats-cluster.default.svc.cluster.local:4222",
   json: true
 });
 
