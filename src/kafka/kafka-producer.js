@@ -1,25 +1,27 @@
 "use strict";
 
 const logger = require("../lib/logUtil").getLogger("kafka-producer");
+const uuid = require("uuid/v4");
 
-const kafka = require("kafka-node");
-const client = new kafka.KafkaClient({
-  kafkaHost: "localhost:9092"
+const { Kafka } = require("kafkajs");
+const kafka = new Kafka({
+  clientId: "p-" + uuid(),
+  brokers: ["localhost:9092"]
 });
-const options = {
-  requireAcks: 1,
-  ackTimeoutMs: 100
+
+const producer = kafka.producer();
+
+const run = async () => {
+  await producer.connect();
+  for (let mi = 0; mi < 10; mi++) {
+    await producer.send({
+      topic: "cgtest",
+      messages: [{ value: `#${mi} message` }]
+    });
+    logger.debug(`#${mi} message published!`);
+  }
 };
-const producer = new kafka.Producer(client, options);
 
-producer.on("ready", () => {
-  logger.debug("producer ready");
-  const payloads = [{ topic: "test", messages: "kafka message" }];
-  producer.send(payloads, (err, data) => {
-    logger.debug(JSON.stringify(data));
-  });
-});
-
-producer.on("error", err => {
-  logger.error(err);
-});
+run()
+  .catch(logger.error)
+  .then(() => producer.disconnect());

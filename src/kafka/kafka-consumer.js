@@ -1,23 +1,26 @@
 "use strict";
 
 const logger = require("../lib/logUtil").getLogger("kafka-consumer");
+const uuid = require("uuid/v4");
 
-const kafka = require("kafka-node");
-const client = new kafka.KafkaClient({
-  kafkaHost: "localhost:9092"
+const { Kafka } = require("kafkajs");
+const kafka = new Kafka({
+  clientId: "c-" + uuid(),
+  brokers: ["localhost:9092"]
 });
-const topics = [{ topic: "test", partition: 0 }];
-const options = {
-  autoCommit: true,
-  fetchMaxWaitMs: 1000,
-  fetchMaxBytes: 1024 * 1024
+
+const consumer = kafka.consumer({ groupId: "default-group" });
+
+const run = async () => {
+  await consumer.connect();
+  await consumer.subscribe({ topic: "cgtest" });
+  await consumer.run({
+    eachMessage: async ({ topic, partition, message }) => {
+      logger.debug(
+        `topic=${topic}, partition=${partition}, message=${message.value.toString()}`
+      );
+    }
+  });
 };
-const consumer = new kafka.Consumer(client, topics, options);
 
-consumer.on("message", msg => {
-  logger.debug(`Message received : ${msg.value}`);
-});
-
-consumer.on("error", err => {
-  logger.error(err);
-});
+run().catch(logger.error);
