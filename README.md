@@ -1,6 +1,12 @@
-# NATSを広く浅く学ぶ
+# NATSで始めるPub/Subメッセージング入門
 
 ## About
 
-タイトル通りです。
-分散システムのためのメッセージ基盤であるNATSをNode.jsで扱います。
+『NATSで始めるPub/Subメッセージング入門』の文中に出てくるコードのリポジトリです。 
+ 
+ ## How to use
+ 
+ ```bash
+cd setup/nats
+docker-compose up -d
+```
