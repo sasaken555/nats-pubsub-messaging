@@ -2,31 +2,8 @@ version: '3'
 services:
   nats:
     image: nats:latest
-    container_name: nats
     ports:
       - 4222:4222
       - 6222:6222
       - 8222:8222
-    restart: always
-  nats-exporter:
-    image: synadia/prometheus-nats-exporter:0.5.0
-    container_name: nats-exporter
-    command: -varz 'http://nats:8222'
-    ports:
-      - 7777:7777
-    restart: always
-  prometheus:
-    image: prom/prometheus
-    container_name: prometheus
-    volumes:
-      - ./prometheus:/etc/prometheus
-    command: '--config.file=/etc/prometheus/prometheus.yaml'
-    ports:
-      - 9090:9090
-    restart: always
-  grafana:
-    image: grafana/grafana
-    container_name: grafana
-    ports:
-      - 3000:3000
-    restart: always
+ 
