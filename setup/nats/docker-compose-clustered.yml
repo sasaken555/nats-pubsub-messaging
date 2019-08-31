@@ -1,6 +1,6 @@
 version: '3'
 services:
-  nats-main:
+  nats-seed:
     image: nats:latest
     ports:
       - 4222:4222
@@ -13,11 +13,11 @@ services:
       - 4223:4222
       - 6223:6222
       - 8223:8222
-    command: '-c nats-server.conf --routes=nats-route://ruser:T0pS3cr3t@nats-main:6222 -D'
+    command: '-c nats-server.conf --routes=nats-route://ruser:T0pS3cr3t@nats-seed:6222 -D'
   nats-3:
     image: nats:latest
     ports:
       - 4224:4222
       - 6224:6222
       - 8224:8222
-    command: '-c nats-server.conf --routes=nats-route://ruser:T0pS3cr3t@nats-main:6222 -D'
+    command: '-c nats-server.conf --routes=nats-route://ruser:T0pS3cr3t@nats-seed:6222 -D'
