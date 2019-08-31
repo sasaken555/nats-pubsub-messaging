@@ -4,6 +4,7 @@ const logger = getLogger("pubsub");
 const NATS = require("nats");
 const nc = NATS.connect({
   url: "nats://localhost:4222"
+  // クラスタリングしたNATSサーバへ接続する場合はurlの代わりにserversを利用する
   // servers: ["nats://localhost:4222", "nats://localhost:4223"]
 });
 
