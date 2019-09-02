@@ -1,5 +1,5 @@
 {
-  "name": "nats-qs",
+  "name": "nats-pubsub-messaging",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,8 +7,8 @@
     "start": "node src/nats/structuredData.js",
     "lint": "eslint src/**/*.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["Pub/Sub", "NATS", "Kafka", "GCP"],
+  "author": "ponzmild",
   "license": "ISC",
   "dependencies": {
     "@google-cloud/pubsub": "^0.30.1",
