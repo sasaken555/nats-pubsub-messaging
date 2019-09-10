@@ -3,7 +3,7 @@ kind: NatsCluster
 metadata:
   name: ponz-nats-cluster
 spec:
-  size: 3
+  size: 1
   version: "2.0.4"
   natsConfig:
     debug: true
