@@ -767,6 +767,11 @@ google-p12-pem@^2.0.0:
   dependencies:
     node-forge "^0.8.0"
 
+google-protobuf@^3.9.0:
+  version "3.9.1"
+  resolved "https://registry.yarnpkg.com/google-protobuf/-/google-protobuf-3.9.1.tgz#87e6a16b7fb16405b515a6c6622d5ace45578d86"
+  integrity sha512-tkz7SVwBktFbqFK3teXFUY/VM57+mbUgV9bSD+sZH1ocHJ7uk7BfEWMRdU24dd0ciUDokreA7ghH2fYFIczQdw==
+
 gtoken@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/gtoken/-/gtoken-4.0.0.tgz#42b63a935a03a61eedf0ec14f74f6875bad627bd"
@@ -1078,7 +1083,16 @@ node-forge@^0.8.0:
   resolved "https://registry.yarnpkg.com/node-forge/-/node-forge-0.8.5.tgz#57906f07614dc72762c84cef442f427c0e1b86ee"
   integrity sha512-vFMQIWt+J/7FLNyKouZ9TazT74PRV3wgv9UT4cRjC8BffxFbKXkgIWR42URCPSnHm/QDz6BOlb2Q0U4+VQT67Q==
 
-nuid@^1.0.0:
+node-nats-streaming@^0.2.6:
+  version "0.2.6"
+  resolved "https://registry.yarnpkg.com/node-nats-streaming/-/node-nats-streaming-0.2.6.tgz#c5db3c58a034a5cb61a284691b1fe19b60bc4c4d"
+  integrity sha512-UTS/tHextk+qdXl0fiSKFPU12eWsRkeRzbzo1zk6ZbXu/PnszKtnSwzxhVRYveU7VjDebYsAFpde1MjC5Y3Nvw==
+  dependencies:
+    google-protobuf "^3.9.0"
+    nats "^1.3.0"
+    nuid "^1.1.0"
+
+nuid@^1.0.0, nuid@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/nuid/-/nuid-1.1.0.tgz#e0c5746350a25562f58283197f34c50861f44675"
   integrity sha512-C/JdZ6PtCqKsCEs4ni76nhBsdmuQgLAT/CTLNprkcLViDAnkk7qx5sSA8PVC2vmSsdBlSsFuGb52v6pwn1oaeg==

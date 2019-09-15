@@ -7,7 +7,12 @@
     "start": "node src/nats/structuredData.js",
     "lint": "eslint src/**/*.js"
   },
-  "keywords": ["Pub/Sub", "NATS", "Kafka", "GCP"],
+  "keywords": [
+    "Pub/Sub",
+    "NATS",
+    "Kafka",
+    "GCP"
+  ],
   "author": "ponzmild",
   "license": "ISC",
   "dependencies": {
@@ -15,6 +20,7 @@
     "date-fns": "^1.30.1",
     "kafkajs": "^1.10.0",
     "nats": "^1.3.0",
+    "node-nats-streaming": "^0.2.6",
     "uuid": "^3.3.3",
     "winston": "^3.2.1"
   },
