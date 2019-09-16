@@ -1,0 +1,26 @@
+---
+apiVersion: nats.io/v1alpha2
+kind: NatsCluster
+metadata:
+  name: ponz-nats-cluster-1
+spec:
+  size: 3
+  version: "2.0.4"
+  # If use ServiceAccount AuthN, uncomment below.
+#  auth:
+#    enableServiceAccount: true
+  extraRoutes:
+    - cluster: "ponz-nats-cluster-2"
+---
+apiVersion: nats.io/v1alpha2
+kind: NatsCluster
+metadata:
+  name: ponz-nats-cluster-2
+spec:
+  size: 3
+  version: "2.0.4"
+  # If use ServiceAccount AuthN, uncomment below.
+#  auth:
+#    enableServiceAccount: true
+  extraRoutes:
+    - cluster: "ponz-nats-cluster-1"
