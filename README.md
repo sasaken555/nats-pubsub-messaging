@@ -36,7 +36,7 @@
 
 ### バイナリを実行
 
-こちらからダウンロードしてZIPファイルを解凍しましょう。
+以下のリンクからダウンロードしてZIPファイルを解凍して実行ファイルにパスを通しましょう。  
 https://github.com/nats-io/nats-server/releases
 
 macOSユーザーならば、Homebrewからダウンロード可能です。
@@ -48,7 +48,7 @@ nats-server --help
 
 ### Kubernetesで実行
 
-Kubernetes Operatorを使います。**個人的にオススメの方法です。**
+Kubernetes Operatorを使います。**個人的にオススメの方法です。**  
 NATSの設定ファイルの操作をうまく隠しながらクラスタの立ち上げ・運用作業を実行できます。
 
 詳細は `setup/nats/k8s` を参照してください。
@@ -61,5 +61,3 @@ docker-compose up -d
 ```
 
 詳細は `setup/nats/docker-compose` を参照してください。
-
-## About Author

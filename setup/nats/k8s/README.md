@@ -1,9 +1,15 @@
-# NATS with Docker Compose
+# NATS with Kubernetes
 
 ## About
 
 NATS Operatorを使ってKubernetes上にNATSサーバのクラスタを構築します。
-シンプルなものから応用編まで4種類用意しました。
+
+NATS OperatorのインストールはYAMLファイルの適用とHelm Chartの利用の2種類あります。  
+Helm Chartが一番楽ですが、クラスタ同士の連結のような機能に制限があります。
+このリポジトリではYAMLファイルの適用による方法を紹介します。
+
+Helm Chartによるインストール方法は以下を参照してください。
+[NATS Operator Helm Chart](https://github.com/nats-io/nats-operator/tree/master/helm/nats-operator)
 
 ## How to use
 
