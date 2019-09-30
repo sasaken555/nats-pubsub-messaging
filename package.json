@@ -10,6 +10,7 @@
   "keywords": [
     "Pub/Sub",
     "NATS",
+    "NATS Streaming",
     "Kafka",
     "GCP"
   ],
